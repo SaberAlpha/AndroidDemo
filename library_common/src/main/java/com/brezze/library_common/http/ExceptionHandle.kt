@@ -1,5 +1,5 @@
 
-
+package com.brezze.library_common.http
 import android.net.ParseException
 import com.google.gson.JsonParseException
 import com.google.gson.stream.MalformedJsonException

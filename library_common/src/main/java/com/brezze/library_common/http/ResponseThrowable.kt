@@ -1,5 +1,5 @@
 
-
+package com.brezze.library_common.http
 
 class ResponseThrowable : Exception {
     var code: Int

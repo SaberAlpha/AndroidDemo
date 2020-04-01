@@ -8,6 +8,9 @@ ext {
             targetSdkVersion : 28,
             versionCode      : 1,
             versionName      : "1.0",
+            VRetrofitSdk     : "2.2.0",
+            VOkhttp          : "3.4.2",
+            VRxlifecycle     : "2.0.1"
     ]
     //version配置
     versions = [
@@ -39,21 +42,22 @@ ext {
             //rx 6.0权限请求
             "rxpermissions"                        : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar",
             //network
-            "okhttp"                               : "com.squareup.okhttp3:okhttp:3.10.0",
+            "okhttp3-logging-interceptor"           : "com.squareup.okhttp3:logging-interceptor:${android["VOkhttp"]}",
+            "okhttp"                               : "com.squareup.okhttp3:okhttp:${android["VOkhttp"]}",
             "retrofit"                             : "com.squareup.retrofit2:retrofit:2.4.0",
             "converter-gson"                       : "com.squareup.retrofit2:converter-gson:2.4.0",
             "adapter-rxjava"                       : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
             //glide图片加载
-            "glide"                                : "com.github.bumptech.glide:glide:4.8.0",
-            "glide-compiler"                       : "com.github.bumptech.glide:compiler:4.8.0",
+            "glide"                                : "com.github.bumptech.glide:glide:4.9.0",
+            "glide-compiler"                       : "com.github.bumptech.glide:compiler:4.9.0",
             //json解析
             "gson"                                 : "com.google.code.gson:gson:2.8.5",
             //material-dialogs
             "material-dialogs-core"                : "com.afollestad.material-dialogs:core:0.9.4.5",
             "material-dialogs-commons"             : "com.afollestad.material-dialogs:commons:0.9.4.5",
             //recyclerview的databinding套装
-            "bindingcollectionadapter"             : "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.2.0",
-            "bindingcollectionadapter-recyclerview": "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.2.0",
+            "bindingcollectionadapter"             : "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:3.1.1",
+            "bindingcollectionadapter-recyclerview": "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:3.1.1",
             //Google AAC
             "lifecycle-extensions"                 : "android.arch.lifecycle:extensions:1.1.1",
             "lifecycle-compiler"                   : "android.arch.lifecycle:compiler:1.1.1",

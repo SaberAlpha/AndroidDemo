@@ -4,17 +4,15 @@ import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
 import com.brezze.library_common.http.BaseResponse
+import com.brezze.library_common.http.ExceptionHandle
 import com.trello.rxlifecycle2.LifecycleProvider
 import com.trello.rxlifecycle2.LifecycleTransformer
 import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.annotations.NonNull
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
-import java.lang.IllegalArgumentException
-import java.lang.RuntimeException
 
 /**
  * 有关Rx的工具类
@@ -109,6 +107,18 @@ class RxUtils : Util {
             return t.data
         }
 
+    }
+
+    /**
+     * 线程切换
+     *
+     * @return
+     */
+    fun <T> io2Main(): ObservableTransformer<T, T>? {
+        return ObservableTransformer { upstream: Observable<T> ->
+            upstream.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+        }
     }
 }
 

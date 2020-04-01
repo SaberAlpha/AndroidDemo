@@ -1,2 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.brezze.library_common" />
+    package="com.brezze.library_common">
+
+    <application>
+        <activity android:name=".base.web.WebviewActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,10 +1,7 @@
 package com.brezze.library_common.http
 
-import ResponseThrowable
-import android.util.Log
 import com.brezze.library_common.utils.ToastUtils
 import io.reactivex.observers.DisposableObserver
-import java.lang.reflect.ParameterizedType
 
 /**
  * File: BaseApiObserver
@@ -15,7 +12,7 @@ import java.lang.reflect.ParameterizedType
  *----------------------------
  *
  */
-open class BaseApiObserver<T>(var onResult:(T?)->Unit,
+class BaseApiObserver<T>(var onResult:(T?)->Unit,
                          var onServerError:(ResponseThrowable)->Unit = {})
     : DisposableObserver<Result<T>>() {
 

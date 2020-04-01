@@ -46,9 +46,7 @@ abstract class BaseFragment<V : ViewDataBinding, VM : BaseViewModel> : RxFragmen
             lifecycle.removeObserver(it)
             it.removeRxBus()
         }
-        binding?.let {
-            it.unbind()
-        }
+        binding.unbind()
     }
 
     override fun onCreateView(

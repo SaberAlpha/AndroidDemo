@@ -1,11 +1,19 @@
 package com.brezze.kotlin92.app
 
 import android.app.Application
-import androidx.multidex.MultiDexApplication
+import android.content.Context
+import androidx.multidex.MultiDex
+import com.brezze.library_common.app.CommonApp
 
-class App :MultiDexApplication() {
+class App :Application() {
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
 
     override fun onCreate() {
         super.onCreate()
+        CommonApp.setApplication(this, true)
     }
 }

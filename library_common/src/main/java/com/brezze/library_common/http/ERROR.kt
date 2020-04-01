@@ -1,5 +1,5 @@
 
-
+package com.brezze.library_common.http
 
 enum class ERROR(private val code: Int, private val err: String) {
 

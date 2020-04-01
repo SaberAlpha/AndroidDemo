@@ -25,12 +25,12 @@ class AppManager private constructor() {
     /**
      * 添加Activity到堆栈
      */
-    fun addActivity(activity: Activity) = (activityStack ?: Stack<Activity>())?.add(activity)
+    fun addActivity(activity: Activity) = (activityStack ?: Stack<Activity>()).add(activity)
 
     /**
      * 移除指定的Activity
      */
-    fun removeActivity(activity: Activity) = activityStack?.remove(activity)
+    fun removeActivity(activity: Activity) = activityStack.remove(activity)
 
     /**
      * 是否有activity
@@ -40,7 +40,7 @@ class AppManager private constructor() {
     /**
      * 获取当前Activity
      */
-    fun currentActivity(): Activity = activityStack?.lastElement()
+    fun currentActivity(): Activity = activityStack.lastElement()
 
     /**
      * 结束当前Activity
@@ -75,12 +75,11 @@ class AppManager private constructor() {
      * 获取指定的Activity
      */
     fun getActivity(cls: Class<*>): Activity? {
-        if (activityStack != null)
-            for (activity in activityStack) {
-                if (activity.javaClass == cls) {
-                    return activity
-                }
+        for (activity in activityStack) {
+            if (activity.javaClass == cls) {
+                return activity
             }
+        }
         return null
     }
 }
