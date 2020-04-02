@@ -9,10 +9,128 @@
             type="com.brezze.kotlin92.ui.main.PosViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.PosActivity">
+        android:orientation="vertical">
+        <ScrollView android:id="@+id/parentScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/img_anim_scanbt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone" />
+
+                <com.brezze.kotlin92.service.dspread.InnerListview
+                    android:id="@+id/lv_indicator_BTPOS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:divider="#FFA0A0A0"
+                    android:dividerHeight="1dp"
+                    android:listSelector="#00FFFFFF"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:scrollbars="none"
+                    android:visibility="gone"></com.brezze.kotlin92.service.dspread.InnerListview>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnBT"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="select device" />
+
+
+                    <Button
+                        android:id="@+id/doTradeButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:text="Start Trade" />
+
+                    <Button
+                        android:id="@+id/disconnect"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:text="disconnect" />
+
+                    <Button
+                        android:id="@+id/btnUSB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="usb device" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/updateFW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="update"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnQuickEMV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="do quick emv transaction"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/keyindex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:gravity="center"
+                        android:hint="key index" />
+
+
+                    <EditText
+                        android:id="@+id/statusEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:editable="false" />
+
+                    <EditText
+                        android:id="@+id/chipStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:hint="chip data" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </layout>

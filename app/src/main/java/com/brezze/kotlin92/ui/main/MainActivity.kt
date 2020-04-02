@@ -19,14 +19,9 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainActivityViewModel>() {
     override fun initData() {
         super.initData()
 
-        statusView.addDelegate(StatusView.Status.EMPTY,R.layout.view_status_list_empty){
-
+        btn_jump.setOnClickListener {
+            startActivity<PosActivity>()
         }
-
-        statusView.empty {
-
-        }
-
 
     }
 }

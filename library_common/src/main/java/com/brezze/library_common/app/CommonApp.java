@@ -6,6 +6,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import com.brezze.library_common.utils.LogUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
@@ -28,6 +29,7 @@ public class CommonApp extends Application {
 
     public static synchronized void setApplication(@NonNull Application application,@NonNull boolean isDebug) {
         context = application;
+        LogUtils.init(isDebug);
         // 屏幕适配
         AutoSize.initCompatMultiProcess(context);
     }
